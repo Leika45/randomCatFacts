@@ -1,0 +1,23 @@
+# Функция для проверки простого числа
+def is_prime(number):
+    if number <= 1:
+        return False
+    elif number <= 3:
+        return True
+    elif number % 2 == 0 or number % 3 == 0:
+        return False
+    i = 5
+    while i * i <= number:
+        if number % i == 0 or number % (i + 2) == 0:
+            return False
+        i += 6
+    return True
+
+# Ввод числа от пользователя
+num = int(input("Введите число: "))
+
+# Проверка является ли число простым и вывод результата
+if is_prime(num):
+    print(num, "является простым числом")
+else:
+    print(num, "не является простым числом")
